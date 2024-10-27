@@ -46,7 +46,7 @@ end
 addScriptButton("Infinite Yield", 'https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source')
 addScriptButton("Prizzlife", 'https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua')
 addScriptButton("Op guns (prison life)", "https://pastebin.com/raw/Dz5FRk17")
-addScriptButton("Genesis Fe Hub", "https://pastebin.com/raw/z5x6PAZT")
+addScriptButton("Genesis Fe Hub", "https://pastebin.com/raw/LJPGydai")
 addScriptButton("CMD-X", "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source")
 
 local Options = window:AddTab("Options")
