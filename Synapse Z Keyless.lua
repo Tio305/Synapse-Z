@@ -29,7 +29,6 @@ Editor:AddButton("Execute", function()
         warn("Script load error: " .. loadError)
     end
 end)
-
 Editor:AddButton("Clear", function()
     console:Set("")
 end)
