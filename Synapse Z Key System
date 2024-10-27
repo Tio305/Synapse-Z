@@ -1,0 +1,143 @@
+-- Key System
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Synapse Z Key System", HidePremium = false, SaveConfig = true, IntroEnabled = false})
+
+OrionLib:MakeNotification({
+	Name = "Welcome To The Key System!",
+	Content = "",
+	Image = "rbxassetid://4483345998",
+	Time = 8
+})
+
+_G.Key = "Synapse Z"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+    OrionLib:Destroy()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/memejames/elerium-v2-ui-library/main/Library", true))()
+
+local window = library:AddWindow("Synapse Z", {
+    main_color = Color3.fromRGB(10, 10, 10),
+    min_size = Vector2.new(650, 350),
+    can_resize = false,
+})
+
+local Editor = window:AddTab("Editor")
+Editor:Show()
+
+local console = Editor:AddConsole({ 
+    ["y"] = 220,
+    ["readonly"] = false,  
+    ["source"] = "Lua",
+})
+
+Editor:AddButton("Execute", function()
+    local scriptText = console:Get()
+    local loadFunc, loadError = loadstring(scriptText)
+
+    if loadFunc then
+        local success, execError = pcall(loadFunc)
+        if not success then
+            warn("Script execution error: " .. execError)
+        end
+    else
+        warn("Script load error: " .. loadError)
+    end
+end)
+
+Editor:AddButton("Clear", function()
+    console:Set("")
+end)
+
+local Scripts = window:AddTab("Scripts")
+
+local function addScriptButton(name, url)
+    Scripts:AddLabel(name)
+    Scripts:AddButton("Execute", function()
+        loadstring(game:HttpGet(url))()
+    end)
+end
+
+addScriptButton("Infinite Yield", 'https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source')
+addScriptButton("Prizzlife", 'https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua')
+addScriptButton("Op guns (prison life)", "https://pastebin.com/raw/Dz5FRk17")
+addScriptButton("Genesis Fe Hub", "https://pastebin.com/raw/z5x6PAZT")
+addScriptButton("CMD-X", "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source")
+
+local Options = window:AddTab("Options")
+Options:AddLabel("Executor Settings")
+local switch = Options:AddSwitch("Console", function()
+    -- script here
+end)
+switch:Set(false)
+Options:AddLabel("UI Settings")
+local dropdown = Options:AddDropdown("Open Key", function(text)
+	if text == "LeftAlt" then  -- Code
+		print("this does nothing im too lazy")
+	elseif text == "Strg" then
+	print("does nothing")
+	elseif text == "LeftShift" then
+	print("also does nothing")
+	end
+end)
+local LeftAlt = dropdown:Add("LeftAlt")  -- Options 
+local Strg = dropdown:Add("Strg")
+local LeftShift = dropdown:Add("LeftShift")
+end
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Entered Correct Key!",
+        Content = "Opening Synapse Z...",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+function IncorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Entered Incorrect Key!",
+        Content = "You Have Entered The Incorrect Key",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+local Key = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local KeySection = Key:AddSection({
+	Name = "Key System"
+})
+
+Key:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end	  
+})
+
+Key:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      	if _G.KeyInput == _G.Key then
+        MakeScriptHub()
+        CorrectKeyNotification()
+        else
+            IncorrectKeyNotification()
+        end
+  	end    
+})
+
+Key:AddButton({
+	Name = "Get Key",
+	Callback = function()
+        setclipboard("https://discord.gg/vRywMBNMSu")
+  	end    
+})
