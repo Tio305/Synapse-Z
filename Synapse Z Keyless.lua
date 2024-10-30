@@ -29,6 +29,7 @@ Editor:AddButton("Execute", function()
         warn("Script load error: " .. loadError)
     end
 end)
+
 Editor:AddButton("Clear", function()
     console:Set("")
 end)
@@ -44,9 +45,9 @@ end
 
 addScriptButton("Infinite Yield", 'https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source')
 addScriptButton("Prizzlife", 'https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua')
-addScriptButton("Op guns (prison life)", "https://pastebin.com/raw/Dz5FRk17")
-addScriptButton("Genesis Fe Hub", "https://pastebin.com/raw/LJPGydai")
+addScriptButton("Genesis Fe Hub", "https://pastebin.com/raw/z5x6PAZT")
 addScriptButton("CMD-X", "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source")
+addScriptButton("Remote Spy", "https://rawscripts.net/raw/Universal-Script-SimpleSpy-20145")
 
 local Options = window:AddTab("Options")
 
