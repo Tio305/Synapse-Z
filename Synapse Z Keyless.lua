@@ -47,7 +47,7 @@ addScriptButton("Infinite Yield", 'https://raw.githubusercontent.com/EdgeIY/infi
 addScriptButton("Prizzlife", 'https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua')
 addScriptButton("Genesis Fe Hub", "https://pastebin.com/raw/z5x6PAZT")
 addScriptButton("CMD-X", "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source")
-addScriptButton("Remote Spy", "https://rawscripts.net/raw/Universal-Script-SimpleSpy-20145")
+addScriptButton("Universal Script Hub", "https://raw.githubusercontent.com/Tio305/Universal-Script-Hub/refs/heads/main/Universal%20Script%20Hub.lua")
 
 local Options = window:AddTab("Options")
 
